@@ -4,14 +4,14 @@ with open('README.md', 'r') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='Flask-Modals',
+    name='Flask-Modals-markupsafe',
     version='0.5.0',
     author='Debashish Palit',
     author_email='dpalit17@outlook.com',
     description='Use forms in Bootstrap modals with Flask.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/deb17/flask-modals',
+    url='https://github.com/emmett08/flask-modals',
     packages=['flask_modals'],
     package_data={'flask_modals': ['templates/modals/*.html',
                                    'static/js/main.js',

@@ -2,7 +2,7 @@ from functools import wraps
 
 from flask import (Blueprint, render_template, get_flashed_messages,
                    _app_ctx_stack, request)
-from jinja2 import Markup
+from jinja2.utils import markupsafe
 from flask_modals.partial import get_partial
 
 
@@ -10,7 +10,7 @@ def modal_messages():
     '''This will be available in the app templates for use in the modal
     body.
     '''
-    return Markup(render_template('modals/modalMessages.html'))
+    return markupsafe.Markup(render_template('modals/modalMessages.html'))
 
 
 def render_template_modal(*args, **kwargs):
@@ -110,6 +110,6 @@ class Modal:
         nprogress_html = render_template('modals/nprogress.html')
         main_html = render_template('modals/jstemplate.html')
 
-        html = Markup(nprogress_html + main_html)
+        html = markupsafe.Markup(nprogress_html + main_html)
 
         return html
